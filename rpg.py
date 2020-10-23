@@ -1,4 +1,4 @@
-from flask import flask, render_template
+from flask import flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,7 +6,12 @@ app = Flask(__name__)
 def homepage():
     return 'home'
 
-@app.route('/greating/string)
+@app.route('/form', methods=['GET', 'POST'])
+def show_form():
+    if request.method == 'GET':
+        return render_template('form.html')
+    else:
+        return request.form['text']
 def method_name():
    pass
 
