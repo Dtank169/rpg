@@ -17,5 +17,4 @@ while x != 3:
         sumar_numeros()
     else:
         print ("perro elige la 2")
-    
-
+print("hasta la vista puto")
