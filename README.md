@@ -1,1 +1,1 @@
-# rpg
+Ideas para desarrollar un proyecto simple con python y html
