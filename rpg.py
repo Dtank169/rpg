@@ -1,8 +1,21 @@
 # sumar 2 números
-print("redacta dos números")
-numero1 = int(input("primer número"))
-numero2 = int(input("segundo número"))
-def sumar_numeros (n1,n2):
-    n3 = n1 + n2
+def sumar_numeros ():
+    print("redacta dos números")
+    numero1 = int(input("primer número"))
+    numero2 = int(input("segundo número"))
+    n3 = numero1 + numero2
     return n3
-print (sumar_numeros(numero1,numero2))
+x = 0
+# ciclo
+while x != 3:
+    print ("elige una opción:")
+    print ("1. que mamada es esa")
+    print ("2. sumar 2 números")
+    print ("3. salir")
+    x = int(input())
+    if x = 2:
+        sumar_numeros()
+    else:
+        print ("perro elige la 2")
+    
+
