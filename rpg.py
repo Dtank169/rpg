@@ -1,3 +1,18 @@
+from flask import flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def homepage():
+    return 'home'
+
+@app.route('/greating/string)
+def method_name():
+   pass
+
+
+def method_name():
+   pass
 # sumar 2 números
 def sumar_numeros ():
     print("redacta dos números")
