@@ -19,4 +19,4 @@ def insertar_uno(datos):
 def editar_uno(nombre, datos):
     resultado = coleccion.update_one({'nombre': nombre},
         {'$set' {'correo': datos['correo']}})
-    return str
+    return str(resultado)
