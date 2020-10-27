@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def indice():
     usuarios = obtener_todo
-    return render_template('templates/indice.html', usuarios=usuarios)
+    return render_template('index.html', usuarios=usuarios)
 
 if __name__ == "__main__":
     app.run()

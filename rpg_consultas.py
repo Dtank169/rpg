@@ -1,25 +1,23 @@
 from pymongo import MongoClient
 
 cliente = MongoClient('localhost', 27017)
-#db = cliente.ejemplo_pymongo
 #coleccion = db.prueba
 db = cliente['dbrpg']
-#db = cliente.ejemplo
-coleccion = db.usuario
+datos = db.usuario
 
 def obtener_todo():
-    cursor = coleccion.find()
+    cursor = datos.find()
     return list(cursor)
 
 def obtener_uno(titulo):
-    resultado = coleccion.find_one({'nombre': titulo})
+    resultado = datos.find_one({'nombre': titulo})
     return resultado
 
 def insertar_uno(datos):
-    id = coleccion.insert_one(datos)
+    id = datos.insert_one(datos)
     return id
 
 def editar_uno(nombre, datos):
-    resultado = coleccion.update_one({'nombre': nombre}, 
-        {'$set': {'correo': datos['correo']}})
+    resultado = datos.update_one({'nombre': nombre}, 
+        {'$set': {'tipo': datos['tipo']}})
     return str(resultado.modified_count)

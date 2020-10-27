@@ -3,12 +3,11 @@
     <head>
         <meta lang="es">
         <meta encoding="utf-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename='jquery-ui.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
     </head>
     <body>
-        <h1>Bienvenidos a Flask</h1>
-        <p>Página HTML de ejemplo</p>
-        <a href="{{ url_for('dinamico_saludo') }}">Saludo</a>
-        <a href="{{ url_for('formulario') }}">Formulario</a>
+        <h1>proyecto RPG</h1>
+        <p>usuarios disponibles:</p>
+        <p>{{ usuarios }}</p>
     </body>
 </html>
