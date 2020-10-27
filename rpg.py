@@ -1,40 +1,42 @@
-from flask import flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from consultas import obtener_todo, obtener_uno, editar_uno
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
-def homepage():
-    return 'home'
+def indice():
+    return render_template('indice.html')
 
-@app.route('/form', methods=['GET', 'POST'])
-def show_form():
-    if request.method == 'GET':
-        return render_template('form.html')
-    else:
-        return request.form['text']
-def method_name():
-   pass
+@app.route('/dinamico/saludo')
+def dinamico_saludo():
+    saludo = 'Hola mundo!'
+    suma = 3 + 4
+    lista = ['A', 34, 'hola', 3.33, 'Flask', 'etc...']
+    return render_template('saludo.html', datos=saludo, suma=suma, lista=lista)
 
+@app.route('/formulario', methods=['GET', 'POST'])
+def formulario():
+    if request.method == 'POST':
+        return request.form['entrada']
+    elif request.method == 'GET':
+        return render_template('formulario.html')
 
-def method_name():
-   pass
-# sumar 2 números
-def sumar_numeros ():
-    print("redacta dos números")
-    numero1 = int(input("primer número"))
-    numero2 = int(input("segundo número"))
-    n3 = numero1 + numero2
-    return n3
-x = 0
-# ciclo
-while x != 3:
-    print ("elige una opción:")
-    print ("1. que mamada es esa")
-    print ("2. sumar 2 números")
-    print ("3. salir")
-    x = int(input())
-    if x = 2:
-        sumar_numeros()
-    else:
-        print ("perro elige la 2")
-print("hasta la vista puto")
+@app.route('/consultas/todo')
+def consultas_todo():
+    consulta = obtener_todo()
+    return render_template('consultar_todo.html', consulta=consulta)
+
+@app.route('/consultas/<titulo>')
+def consultas(titulo):
+    resultado = obtener_uno(titulo)
+    return render_template('consultar_uno.html', resultado=resultado)
+
+@app.route('/edicion/<nombre>')
+def edicion(nombre):
+    datos = {'description': 'New description'}
+    resultado = editar_uno(nombre, datos)
+    return redirect(url_for('consultas_todo'))
+
+if __name__ == "__main__":
+    app.run()
