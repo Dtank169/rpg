@@ -3,12 +3,28 @@
     <head>
         <meta lang="es">
         <meta encoding="utf-8">
-        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='jquery-ui.css') }}">
+        <script type=text/javascript src="{{ url_for('static', filename='scripts/jquery.js') }}"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='scripts/jquery-ui.js') }}"></script>
     </head>
     <body>
         <h1>proyecto RPG</h1>
         <p>usuarios disponibles:</p>
         <p>{{ usuarios }}</p>
         <p>{{ usuario }}</p>
+        <div id="accordion">
+            <h3>Section 1</h3>
+            <div>
+            </div>
+            <h3>Section 2</h3>
+            <div>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+            </div>
+            <h3>Section 4</h3>
+            <div>
+            </div>
+          </div>
     </body>
 </html>
