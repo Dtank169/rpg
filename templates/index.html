@@ -4,8 +4,13 @@
         <meta lang="es">
         <meta encoding="utf-8">
         <link rel="stylesheet" href="{{ url_for('static', filename='jquery-ui.css') }}">
-        <script type=text/javascript src="{{ url_for('static', filename='scripts/jquery.js') }}"></script>
-        <script type=text/javascript src="{{ url_for('static', filename='scripts/jquery-ui.js') }}"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery.js') }}"></script>
+        <script type=text/javascript src="{{ url_for('static', filename='jquery-ui.js') }}"></script>
+        <script>
+            $( function() {
+              $( "#accordion" ).accordion();
+            } );
+        </script>
     </head>
     <body>
         <h1>proyecto RPG</h1>
