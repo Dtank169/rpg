@@ -9,8 +9,8 @@ def obtener_todo():
     cursor = datos.find()
     return list(cursor)
 
-def obtener_uno(titulo):
-    resultado = datos.find_one({'nombre': titulo})
+def obtener_uno(tipo):
+    resultado = datos.find_one({'tipo': tipo})
     return resultado
 
 def insertar_uno(datos):

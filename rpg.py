@@ -7,7 +7,10 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def indice():
     usuarios = obtener_todo()
-    return render_template('index.html', usuarios=usuarios)
+    tipo = "jugador"
+    usuario = obtener_uno(tipo)
+    return render_template('index.html', usuarios=usuarios, usuario=usuario)
+
 
 if __name__ == "__main__":
     app.run()
